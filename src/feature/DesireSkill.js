@@ -6,6 +6,7 @@ const DesireSkill = () => {
     return (
         <StyledTracker style={{borderLeft:"1px solid white"}}>
             <h4>Desire Progression</h4>
+            <div>difference from current</div>
         </StyledTracker>
     )
 }
