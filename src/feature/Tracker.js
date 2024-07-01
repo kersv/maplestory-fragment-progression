@@ -1,4 +1,4 @@
-import useFragmentTracker from "./useFragmentTracker";
+
 import { StyledTracker, StyledSkill, StyledInput, StyledContainer } from "./styles/feature";
 import Origin from '../assets/super-cannon-explosion.png'
 import Hexa from '../assets/hexa-cannon-barrage.png'
@@ -10,14 +10,10 @@ import Core4 from '../assets/the-nuclear-option.png'
 import Common from '../assets/sol-janus.png'
 import FragDisplay from "./FragDisplay";
 
-const Tracker = () => {
-    const {
-        values: {valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon},
-        setters: {setOri, setHexa, setSecondHexa, setEnhace1, setEnhace2, setEnhace3, setEnhace4, setCommon},
-        handleChange,
-        calcFragCost,
-        calcTotalFrag
-    } = useFragmentTracker();
+const Tracker = ({props}) => {
+    const {valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon} = props.values
+    const {setOri, setHexa, setSecondHexa, setEnhace1, setEnhace2, setEnhace3, setEnhace4, setCommon} = props.setters
+    const {handleChange, calcFragCost, calcTotalFrag} = props
 
     return (
         <StyledTracker>
