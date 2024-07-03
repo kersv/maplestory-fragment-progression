@@ -13,7 +13,7 @@ import FragDisplay from "./FragDisplay";
 const Tracker = ({props}) => {
     const {valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon} = props.values
     const {setOri, setHexa, setSecondHexa, setEnhace1, setEnhace2, setEnhace3, setEnhace4, setCommon} = props.setters
-    const {handleChange, calcFragCost, calcTotalFrag} = props
+    const {handleChange, calcFragCost, calcTotalFrag, resetSkills} = props
 
     return (
         <StyledTracker>
@@ -83,6 +83,7 @@ const Tracker = ({props}) => {
             </StyledContainer>
 
             <StyledContainer style={{alignItems:'center', justifyContent:"flex-end"}}>
+                <button onClick={() => resetSkills('Current')}>Reset</button>
                 <div>Total</div>
                 <FragDisplay cost={calcTotalFrag}/>
             </StyledContainer>

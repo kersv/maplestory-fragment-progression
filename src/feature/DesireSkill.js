@@ -13,7 +13,7 @@ import FragDisplay from "./FragDisplay";
 const DesireSkill = ({props}) => {
     const {valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon} = props.values
     const {setDesireOri, setDesireHexa, setDesireSecondHexa, setDesireEnhace1, setDesireEnhace2, setDesireEnhace3, setDesireEnhace4, setDesireCommon} = props.setters
-    const {handleChange, calcFragCost, differenceTotalFrags, calcDesireFrag} = props
+    const {handleChange, calcFragCost, differenceTotalFrags, calcDesireFrag, resetSkills} = props
 
     return (
         <StyledTracker>
@@ -83,6 +83,7 @@ const DesireSkill = ({props}) => {
             </StyledContainer>
 
             <StyledContainer style={{ alignItems: 'center', justifyContent: "flex-end" }}>
+                <button onClick={() => resetSkills()}>Reset</button>
                 <div>Total</div>
                 <FragDisplay cost={calcDesireFrag} />
             </StyledContainer>

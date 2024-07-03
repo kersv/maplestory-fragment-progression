@@ -27,6 +27,29 @@ const useFragmentTracker = () => {
         setter(newValue);
     };
 
+    const resetSkills = (value) => {
+        if(value === 'Current'){
+            setOri(1)
+            setHexa(0)
+            setSecondHexa(0)
+            setEnhace1(0)
+            setEnhace2(0)
+            setEnhace3(0)
+            setEnhace4(0)
+            setCommon(0)
+        }
+        else{
+            setDesireOri(30)
+            setDesireHexa(30)
+            setDesireSecondHexa(30)
+            setDesireEnhace1(30)
+            setDesireEnhace2(30)
+            setDesireEnhace3(30)
+            setDesireEnhace4(30)
+            setDesireCommon(30)
+        }
+    }
+
     const calcFragCost = (skill, value) => {
         if (value < 0) {
             return 0;
@@ -90,6 +113,7 @@ const useFragmentTracker = () => {
         },
         handleChange,
         calcFragCost,
+        resetSkills,
         calcTotalFrag,
         calcDesireFrag,
         differenceTotalFrags
