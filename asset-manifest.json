@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/maplestory-fragment-progression/static/css/main.dc7f349c.css",
-    "main.js": "/maplestory-fragment-progression/static/js/main.83905c32.js",
+    "main.js": "/maplestory-fragment-progression/static/js/main.69e2de44.js",
     "static/js/453.8a8f41d8.chunk.js": "/maplestory-fragment-progression/static/js/453.8a8f41d8.chunk.js",
+    "static/media/loader.gif": "/maplestory-fragment-progression/static/media/loader.8ea98dd611154f43c0be.gif",
     "index.html": "/maplestory-fragment-progression/index.html",
     "main.dc7f349c.css.map": "/maplestory-fragment-progression/static/css/main.dc7f349c.css.map",
-    "main.83905c32.js.map": "/maplestory-fragment-progression/static/js/main.83905c32.js.map",
+    "main.69e2de44.js.map": "/maplestory-fragment-progression/static/js/main.69e2de44.js.map",
     "453.8a8f41d8.chunk.js.map": "/maplestory-fragment-progression/static/js/453.8a8f41d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc7f349c.css",
-    "static/js/main.83905c32.js"
+    "static/js/main.69e2de44.js"
   ]
 }
