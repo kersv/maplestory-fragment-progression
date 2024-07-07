@@ -49,6 +49,9 @@ const useFragmentTracker = () => {
     }, [valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon,
         valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon]);
 
+    const calcSkillPercentage = (current, desire) => {
+        return current/desire
+    }
 
     const handleChange = (e, setter) => {
         const newValue = Number(e.target.value);
@@ -142,6 +145,7 @@ const useFragmentTracker = () => {
         handleChange,
         calcFragCost,
         resetSkills,
+        calcSkillPercentage,
         calcTotalFrag,
         calcDesireFrag,
         differenceTotalFrags

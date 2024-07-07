@@ -16,7 +16,7 @@ const DesireSkill = ({props}) => {
     const {handleChange, calcFragCost, differenceTotalFrags, calcDesireFrag, resetSkills} = props
 
     return (
-        <StyledTracker>
+        <StyledTracker style={{justifyContent:'space-between', gap: '15px'}}>
             <h4>Desired Progression</h4>
             <StyledContainer>
                 <StyledInput type="number" value={valueDesireOri} onChange={(e) => handleChange(e, setDesireOri)} min="0" max="30" />
