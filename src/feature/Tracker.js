@@ -9,6 +9,7 @@ import Core3 from '../assets/poolmaker.png'
 import Core4 from '../assets/the-nuclear-option.png'
 import Common from '../assets/sol-janus.png'
 import FragDisplay from "./FragDisplay";
+import { FaArrowRotateLeft } from "react-icons/fa6";
 
 const Tracker = ({props}) => {
     const {valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon, valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon} = props.values
@@ -90,10 +91,12 @@ const Tracker = ({props}) => {
             </StyledContainer>
             <progress value={calcSkillPercentage(valueCommon, valueDesireCommon)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
-            <StyledContainer style={{alignItems:'center', justifyContent:"flex-end"}}>
-                <button onClick={() => resetSkills('Current')}>Reset</button>
-                <div>Total</div>
-                <FragDisplay cost={calcTotalFrag}/>
+            <StyledContainer style={{alignItems:'center', justifyContent:"space-between"}}>
+                <button onClick={() => resetSkills('Current')} style={{background: 'transparent', color: 'white', outline: 'none', cursor: 'pointer', padding: '10px', fontSize: '1.5em', border:'none'}}><FaArrowRotateLeft/></button>
+                <div style={{display:'flex', alignItems:'center', gap: '10px'}}>
+                    <div>Total</div>
+                    <FragDisplay cost={calcTotalFrag}/>
+                </div>
             </StyledContainer>
         </StyledTracker>
     )
