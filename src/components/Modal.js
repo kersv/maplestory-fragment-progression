@@ -1,4 +1,5 @@
-import { Backdrop, Content, CloseButton } from "../feature/styles/feature"
+import { Backdrop, Content, CloseButton} from "../feature/styles/feature"
+import { IoCloseSharp } from 'react-icons/io5'
 
 const Modal = ({show, onClose, children}) => {
 
@@ -9,7 +10,7 @@ const Modal = ({show, onClose, children}) => {
     return (
         <Backdrop>
             <Content>
-                <CloseButton onClick={onClose}>X</CloseButton>
+                <CloseButton onClick={onClose}><IoCloseSharp/></CloseButton>
                 {children}
             </Content>
         </Backdrop>
