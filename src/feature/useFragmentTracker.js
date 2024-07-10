@@ -93,15 +93,15 @@ const useFragmentTracker = () => {
             for (let i = 0; i < value; i++) {
                 fragSum += ORIGIN_FRAGMENT_COST[i];
             }
-        } else if (skill === 'HEXA') {
+        } else if (skill === 'HEXA Mastery') {
             for (let i = 0; i < value; i++) {
                 fragSum += HEXA_MASTERY_FRAGMENT_COST[i];
             }
-        } else if (skill === 'Enhancement') {
+        } else if (skill === 'Enhancement Core') {
             for (let i = 0; i < value; i++) {
                 fragSum += ENHANCEMENT_FRAGMENT_COST[i];
             }
-        } else if (skill === 'Common') {
+        } else if (skill === 'Common Core') {
             for (let i = 0; i < value; i++) {
                 fragSum += COMMON_CORE_COST[i];
             }
@@ -111,24 +111,24 @@ const useFragmentTracker = () => {
 
     const calcTotalFrag = useMemo(() => {
         return (calcFragCost('Origin', valueOri) +
-            calcFragCost('HEXA', valueHexa) +
-            calcFragCost('HEXA', valueSecondHexa) +
-            calcFragCost('Enhancement', valueEnhace1) +
-            calcFragCost('Enhancement', valueEnhace2) +
-            calcFragCost('Enhancement', valueEnhace3) +
-            calcFragCost('Enhancement', valueEnhace4) +
-            calcFragCost('Common', valueCommon))
+            calcFragCost('HEXA Mastery', valueHexa) +
+            calcFragCost('HEXA Mastery', valueSecondHexa) +
+            calcFragCost('Enhancement Core', valueEnhace1) +
+            calcFragCost('Enhancement Core', valueEnhace2) +
+            calcFragCost('Enhancement Core', valueEnhace3) +
+            calcFragCost('Enhancement Core', valueEnhace4) +
+            calcFragCost('Common Core', valueCommon))
     }, [valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon]);
 
     const calcDesireFrag = useMemo(() => {
         return (calcFragCost('Origin', valueDesireOri) +
-            calcFragCost('HEXA', valueDesireHexa) +
-            calcFragCost('HEXA', valueDesireSecondHexa) +
-            calcFragCost('Enhancement', valueDesireEnhace1) +
-            calcFragCost('Enhancement', valueDesireEnhace2) +
-            calcFragCost('Enhancement', valueDesireEnhace3) +
-            calcFragCost('Enhancement', valueDesireEnhace4) +
-            calcFragCost('Common', valueDesireCommon))
+            calcFragCost('HEXA Mastery', valueDesireHexa) +
+            calcFragCost('HEXA Mastery', valueDesireSecondHexa) +
+            calcFragCost('Enhancement Core', valueDesireEnhace1) +
+            calcFragCost('Enhancement Core', valueDesireEnhace2) +
+            calcFragCost('Enhancement Core', valueDesireEnhace3) +
+            calcFragCost('Enhancement Core', valueDesireEnhace4) +
+            calcFragCost('Common Core', valueDesireCommon))
     },[valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon])
 
     const differenceTotalFrags = useMemo(() => {

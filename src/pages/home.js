@@ -24,7 +24,7 @@ const Home = () => {
                 </div>
             ) : (
                 <div>
-                    <h3>Maplestory 6th Job Tracker</h3>
+                    <h3>MapleFrags</h3>
                     <div style={{ display: 'flex' }}>
                         <Tracker props={hook} />
                         <DesireSkill props={hook} />
