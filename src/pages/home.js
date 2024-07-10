@@ -42,7 +42,7 @@ const Home = () => {
                         <img src={SkillChart}/>
                         <img src={CommonChart}/>
                     </Modal>
-                    <div style={{ display: 'flex', justifyContent:'center', alignContent:'center' }}>
+                    <div style={{ display: 'flex', justifyContent:'center', alignContent:'center', gap: '80px' }}>
                         <Tracker props={hook} />
                         <DesireSkill props={hook} />
                     </div>
