@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledTracker, StyledContainer } from "./styles/feature";
+import { StyledTracker, StyledContainer, Button } from "./styles/feature";
 import Origin from '../assets/super-cannon-explosion.png'
 import Hexa from '../assets/hexa-cannon-barrage.png'
 import SecondHexa from '../assets/second-hexa.png'
@@ -19,7 +19,7 @@ const DesireSkill = ({props}) => {
     const {handleChange, calcFragCost, differenceTotalFrags, calcDesireFrag, resetSkills} = props
 
     return (
-        <StyledTracker style={{justifyContent:'space-between', gap: '15px'}}>
+        <StyledTracker style={{gap: '10px'}}>
             <h4>Desired Progression</h4>
             <Skill
                 value={valueDesireOri}
@@ -94,7 +94,7 @@ const DesireSkill = ({props}) => {
                 skillLabel={SKILL_TYPES.COMMON_CORE_COST}
             />
             <StyledContainer style={{ alignItems: 'center', justifyContent: "space-between" }}>
-            <button onClick={() => resetSkills()} style={{background: 'transparent', color: 'white', outline: 'none', cursor: 'pointer', padding: '10px', fontSize: '1.5em', border:'none'}}><FaArrowRotateLeft/></button>
+            <Button onClick={() => resetSkills()}><FaArrowRotateLeft/></Button>
             <div style={{display:'flex', alignItems:'center', gap: '10px'}}>
                 <div>Total</div>
                 <FragDisplay cost={calcDesireFrag} />
