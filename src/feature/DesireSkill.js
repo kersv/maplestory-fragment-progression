@@ -11,6 +11,7 @@ import Common from '../assets/sol-janus.png'
 import FragDisplay from "./FragDisplay";
 import { FaArrowRotateLeft } from 'react-icons/fa6';
 import Skill from '../components/Skill';
+import { SKILL_TYPES } from '../constants/fragmentCost';
 
 const DesireSkill = ({props}) => {
     const {valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon} = props.values
@@ -27,6 +28,7 @@ const DesireSkill = ({props}) => {
                 image={Origin}
                 label='Origin'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ORIGIN_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireHexa}
@@ -35,6 +37,7 @@ const DesireSkill = ({props}) => {
                 image={Hexa}
                 label='HEXA Mastery'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.HEXA_MASTERY_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireSecondHexa}
@@ -43,6 +46,7 @@ const DesireSkill = ({props}) => {
                 image={SecondHexa}
                 label='HEXA Mastery'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.HEXA_MASTERY_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireEnhace1}
@@ -51,6 +55,7 @@ const DesireSkill = ({props}) => {
                 image={Core1}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireEnhace2}
@@ -59,6 +64,7 @@ const DesireSkill = ({props}) => {
                 image={Core2}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireEnhace3}
@@ -67,6 +73,7 @@ const DesireSkill = ({props}) => {
                 image={Core3}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireEnhace4}
@@ -75,6 +82,7 @@ const DesireSkill = ({props}) => {
                 image={Core4}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <Skill
                 value={valueDesireCommon}
@@ -83,6 +91,7 @@ const DesireSkill = ({props}) => {
                 image={Common}
                 label='Common Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.COMMON_CORE_COST}
             />
             <StyledContainer style={{ alignItems: 'center', justifyContent: "space-between" }}>
             <button onClick={() => resetSkills()} style={{background: 'transparent', color: 'white', outline: 'none', cursor: 'pointer', padding: '10px', fontSize: '1.5em', border:'none'}}><FaArrowRotateLeft/></button>

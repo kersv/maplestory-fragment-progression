@@ -11,6 +11,7 @@ import Common from '../assets/sol-janus.png'
 import FragDisplay from "./FragDisplay";
 import { FaArrowRotateLeft } from "react-icons/fa6";
 import Skill from "../components/Skill";
+import { SKILL_TYPES } from "../constants/fragmentCost";
 
 const Tracker = ({props}) => {
     const {valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon, valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon} = props.values
@@ -27,6 +28,7 @@ const Tracker = ({props}) => {
                 image={Origin}
                 label="Origin"
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ORIGIN_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueOri, valueDesireOri)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -37,6 +39,7 @@ const Tracker = ({props}) => {
                 image={Hexa}
                 label='HEXA Mastery'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.HEXA_MASTERY_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueHexa, valueDesireHexa)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -47,6 +50,7 @@ const Tracker = ({props}) => {
                 image={SecondHexa}
                 label='HEXA Mastery'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.HEXA_MASTERY_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueSecondHexa, valueDesireSecondHexa)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -57,6 +61,7 @@ const Tracker = ({props}) => {
                 image={Core1}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueEnhace1, valueDesireEnhace1)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -67,6 +72,7 @@ const Tracker = ({props}) => {
                 image={Core2}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueEnhace2, valueDesireEnhace2)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -77,6 +83,7 @@ const Tracker = ({props}) => {
                 image={Core3}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueEnhace3, valueDesireEnhace3)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -87,6 +94,7 @@ const Tracker = ({props}) => {
                 image={Core4}
                 label='Enhancement Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.ENHANCEMENT_FRAGMENT_COST}
             />
             <progress value={calcSkillPercentage(valueEnhace4, valueDesireEnhace4)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
@@ -97,6 +105,7 @@ const Tracker = ({props}) => {
                 image={Common}
                 label='Common Core'
                 calcFragCost={calcFragCost}
+                skillLabel={SKILL_TYPES.COMMON_CORE_COST}
             />
             <progress value={calcSkillPercentage(valueCommon, valueDesireCommon)} style={{margin: '0 10px 0 10px', width: 'auto'}}/>
 
