@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/maplestory-fragment-progression/static/css/main.dc7f349c.css",
-    "main.js": "/maplestory-fragment-progression/static/js/main.aa6f1399.js",
+    "main.js": "/maplestory-fragment-progression/static/js/main.028b9cc5.js",
     "static/js/453.8a8f41d8.chunk.js": "/maplestory-fragment-progression/static/js/453.8a8f41d8.chunk.js",
     "static/media/skills-cost.png": "/maplestory-fragment-progression/static/media/skills-cost.f0ca15166ef261997633.png",
     "static/media/common-core-cost.png": "/maplestory-fragment-progression/static/media/common-core-cost.f1c02b029ded5f97960e.png",
     "static/media/loader.gif": "/maplestory-fragment-progression/static/media/loader.8ea98dd611154f43c0be.gif",
     "index.html": "/maplestory-fragment-progression/index.html",
     "main.dc7f349c.css.map": "/maplestory-fragment-progression/static/css/main.dc7f349c.css.map",
-    "main.aa6f1399.js.map": "/maplestory-fragment-progression/static/js/main.aa6f1399.js.map",
+    "main.028b9cc5.js.map": "/maplestory-fragment-progression/static/js/main.028b9cc5.js.map",
     "453.8a8f41d8.chunk.js.map": "/maplestory-fragment-progression/static/js/453.8a8f41d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc7f349c.css",
-    "static/js/main.aa6f1399.js"
+    "static/js/main.028b9cc5.js"
   ]
 }
