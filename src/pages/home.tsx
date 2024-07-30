@@ -12,8 +12,8 @@ import { Button } from '../feature/styles/feature';
 
 const Home = () => {
     const hook = useFragmentTracker();
-    const [loading, setLoading] = useState(true);
-    const [showModal, setShowModal] = useState(false)
+    const [loading, setLoading] = useState<boolean>(true);
+    const [showModal, setShowModal] = useState<boolean>(false)
 
     useEffect(() => {
         const timer = setTimeout(() => {

@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "commonjs",
+        "jsx": "react",
+        "outDir": "./dist",
+        "strict": true,
+        "allowJs": true,
+        "checkJs": false,
+        "esModuleInterop": true,
+		"downlevelIteration": true,
+        "lib": [
+            "DOM",
+            "DOM.Iterable"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}

@@ -1,33 +1,84 @@
 import { useMemo, useState, useEffect } from "react";
 import { SKILL_COST, SKILL_TYPES } from "../constants/fragmentCost";
 
+// Define types for the state values
+type FragmentValue = number;
+type SetFragmentValue = React.Dispatch<React.SetStateAction<FragmentValue>>;
+
+// Define the shape of the return object
+interface UseFragmentTracker {
+    values: {
+      valueOri: FragmentValue;
+      valueHexa: FragmentValue;
+      valueSecondHexa: FragmentValue;
+      valueEnhace1: FragmentValue;
+      valueEnhace2: FragmentValue;
+      valueEnhace3: FragmentValue;
+      valueEnhace4: FragmentValue;
+      valueCommon: FragmentValue;
+      valueDesireOri: FragmentValue;
+      valueDesireHexa: FragmentValue;
+      valueDesireSecondHexa: FragmentValue;
+      valueDesireEnhace1: FragmentValue;
+      valueDesireEnhace2: FragmentValue;
+      valueDesireEnhace3: FragmentValue;
+      valueDesireEnhace4: FragmentValue;
+      valueDesireCommon: FragmentValue;
+    };
+    setters: {
+      setOri: SetFragmentValue;
+      setHexa: SetFragmentValue;
+      setSecondHexa: SetFragmentValue;
+      setEnhace1: SetFragmentValue;
+      setEnhace2: SetFragmentValue;
+      setEnhace3: SetFragmentValue;
+      setEnhace4: SetFragmentValue;
+      setCommon: SetFragmentValue;
+      setDesireOri: SetFragmentValue;
+      setDesireHexa: SetFragmentValue;
+      setDesireSecondHexa: SetFragmentValue;
+      setDesireEnhace1: SetFragmentValue;
+      setDesireEnhace2: SetFragmentValue;
+      setDesireEnhace3: SetFragmentValue;
+      setDesireEnhace4: SetFragmentValue;
+      setDesireCommon: SetFragmentValue;
+    };
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>, setter: SetFragmentValue) => void;
+    calcFragCost: (skill: string, value: number) => number;
+    resetSkills: (value: 'Current' | 'Desire') => void;
+    calcSkillPercentage: (current: number, desire: number) => number;
+    calcTotalFrag: number;
+    calcDesireFrag: number;
+    differenceTotalFrags: number;
+}
+
 const useFragmentTracker = () => {
-    const getInitialState = (key, initialValue) => {
+    const getInitialState = (key: string, initialValue: number) => {
         const storedValue = localStorage.getItem(key);
         return storedValue ? JSON.parse(storedValue) : initialValue;
     };
 
     // Current Level
-    const [valueOri, setOri] = useState(getInitialState('valueOri', 1));
-    const [valueHexa, setHexa] = useState(getInitialState('valueHexa', 0));
-    const [valueSecondHexa, setSecondHexa] = useState(getInitialState('valueSecondHexa', 0));
-    const [valueEnhace1, setEnhace1] = useState(getInitialState('valueEnhace1', 0));
-    const [valueEnhace2, setEnhace2] = useState(getInitialState('valueEnhace2', 0));
-    const [valueEnhace3, setEnhace3] = useState(getInitialState('valueEnhace3', 0));
-    const [valueEnhace4, setEnhace4] = useState(getInitialState('valueEnhace4', 0));
-    const [valueCommon, setCommon] = useState(getInitialState('valueCommon', 0));
+    const [valueOri, setOri] = useState<FragmentValue>(getInitialState('valueOri', 1));
+    const [valueHexa, setHexa] = useState<FragmentValue>(getInitialState('valueHexa', 0));
+    const [valueSecondHexa, setSecondHexa] = useState<FragmentValue>(getInitialState('valueSecondHexa', 0));
+    const [valueEnhace1, setEnhace1] = useState<FragmentValue>(getInitialState('valueEnhace1', 0));
+    const [valueEnhace2, setEnhace2] = useState<FragmentValue>(getInitialState('valueEnhace2', 0));
+    const [valueEnhace3, setEnhace3] = useState<FragmentValue>(getInitialState('valueEnhace3', 0));
+    const [valueEnhace4, setEnhace4] = useState<FragmentValue>(getInitialState('valueEnhace4', 0));
+    const [valueCommon, setCommon] = useState<FragmentValue>(getInitialState('valueCommon', 0));
 
 
     // Desire Level
     const INITIAL_DESIRE_VALUE = 30;
-    const [valueDesireOri, setDesireOri] = useState(getInitialState('valueDesireOri', INITIAL_DESIRE_VALUE));
-    const [valueDesireHexa, setDesireHexa] = useState(getInitialState('valueDesireHexa', INITIAL_DESIRE_VALUE));
-    const [valueDesireSecondHexa, setDesireSecondHexa] = useState(getInitialState('valueDesireSecondHexa', INITIAL_DESIRE_VALUE));
-    const [valueDesireEnhace1, setDesireEnhace1] = useState(getInitialState('valueDesireEnhace1', INITIAL_DESIRE_VALUE));
-    const [valueDesireEnhace2, setDesireEnhace2] = useState(getInitialState('valueDesireEnhace2', INITIAL_DESIRE_VALUE));
-    const [valueDesireEnhace3, setDesireEnhace3] = useState(getInitialState('valueDesireEnhace3', INITIAL_DESIRE_VALUE));
-    const [valueDesireEnhace4, setDesireEnhace4] = useState(getInitialState('valueDesireEnhace4', INITIAL_DESIRE_VALUE));
-    const [valueDesireCommon, setDesireCommon] = useState(getInitialState('valueDesireCommon', INITIAL_DESIRE_VALUE));
+    const [valueDesireOri, setDesireOri] = useState<FragmentValue>(getInitialState('valueDesireOri', INITIAL_DESIRE_VALUE));
+    const [valueDesireHexa, setDesireHexa] = useState<FragmentValue>(getInitialState('valueDesireHexa', INITIAL_DESIRE_VALUE));
+    const [valueDesireSecondHexa, setDesireSecondHexa] = useState<FragmentValue>(getInitialState('valueDesireSecondHexa', INITIAL_DESIRE_VALUE));
+    const [valueDesireEnhace1, setDesireEnhace1] = useState<FragmentValue>(getInitialState('valueDesireEnhace1', INITIAL_DESIRE_VALUE));
+    const [valueDesireEnhace2, setDesireEnhace2] = useState<FragmentValue>(getInitialState('valueDesireEnhace2', INITIAL_DESIRE_VALUE));
+    const [valueDesireEnhace3, setDesireEnhace3] = useState<FragmentValue>(getInitialState('valueDesireEnhace3', INITIAL_DESIRE_VALUE));
+    const [valueDesireEnhace4, setDesireEnhace4] = useState<FragmentValue>(getInitialState('valueDesireEnhace4', INITIAL_DESIRE_VALUE));
+    const [valueDesireCommon, setDesireCommon] = useState<FragmentValue>(getInitialState('valueDesireCommon', INITIAL_DESIRE_VALUE));
 
     useEffect(() => {
         localStorage.setItem('valueOri', JSON.stringify(valueOri));
@@ -49,16 +100,16 @@ const useFragmentTracker = () => {
     }, [valueOri, valueHexa, valueSecondHexa, valueEnhace1, valueEnhace2, valueEnhace3, valueEnhace4, valueCommon,
         valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon]);
 
-    const calcSkillPercentage = (current, desire) => {
+    const calcSkillPercentage = (current: number, desire: number) => {
         return current/desire
     }
 
-    const handleChange = (e, setter) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>, setter: SetFragmentValue) => {
         const newValue = Number(e.target.value);
         setter(newValue);
     };
 
-    const resetSkills = (value) => {
+    const resetSkills = (value: 'Current' | 'Desire') => {
         if(value === 'Current'){
             setOri(1)
             setHexa(0)
@@ -81,7 +132,7 @@ const useFragmentTracker = () => {
         }
     }
 
-    const calcFragCost = (skill, value) => {
+    const calcFragCost = (skill: string, value: number) => {
         if (value < 0) return 0;
         if (value > 30) return 30;
 
@@ -117,7 +168,7 @@ const useFragmentTracker = () => {
             calcFragCost(SKILL_TYPES.COMMON_CORE_COST, valueDesireCommon))
     },[valueDesireOri, valueDesireHexa, valueDesireSecondHexa, valueDesireEnhace1, valueDesireEnhace2, valueDesireEnhace3, valueDesireEnhace4, valueDesireCommon])
 
-    const differenceTotalFrags = useMemo(() => {
+    const differenceTotalFrags = useMemo(():number => {
         return calcDesireFrag - calcTotalFrag
     }, [calcDesireFrag, calcTotalFrag])
 
