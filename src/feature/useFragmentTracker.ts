@@ -1,11 +1,9 @@
 import { useMemo, useState, useEffect } from "react";
 import { SKILL_COST, SKILL_TYPES } from "../constants/fragmentCost";
 
-// Define types for the state values
 type FragmentValue = number;
 type SetFragmentValue = React.Dispatch<React.SetStateAction<FragmentValue>>;
 
-// Define the shape of the return object
 interface UseFragmentTracker {
     values: {
       valueOri: FragmentValue;
@@ -52,7 +50,7 @@ interface UseFragmentTracker {
     differenceTotalFrags: number;
 }
 
-const useFragmentTracker = () => {
+const useFragmentTracker = (): UseFragmentTracker => {
     const getInitialState = (key: string, initialValue: number) => {
         const storedValue = localStorage.getItem(key);
         return storedValue ? JSON.parse(storedValue) : initialValue;
